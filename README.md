@@ -19,11 +19,11 @@
 - [x] DELETE /v1/users/:userId - delete user
 
 ## Station
-- [ ] POST /v1/station - register station
-- [ ] GET /v1/station - get all stations
-- [ ] GET /v1/station/:stationId - get specific station
-- [ ] PATCH /v1/station/:stationId - update specific station
-- [ ] DELETE /v1/station/:stationId - remove specific station
+- [x] POST /v1/station - register station
+- [x] GET /v1/station - get all stations
+- [x] GET /v1/station/:stationId - get specific station
+- [x] PATCH /v1/station/:stationId - update specific station
+- [x] DELETE /v1/station/:stationId - remove specific station
 
 ## Measurement
 - [ ] POST /v1/measurement - create new measurement

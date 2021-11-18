@@ -8,13 +8,13 @@ const router = express.Router();
 
 router
 	.route('/')
-	.post(auth('getUsers'), validate(stationValidation.createStation), stationController.createStation)
+	.post(auth('newStation'), validate(stationValidation.createStation), stationController.createStation)
 	.get(auth(), validate(stationValidation.getStations), stationController.getStations);
 
 router
 	.route('/:stationId')
 	.get(auth(), validate(stationValidation.getStation), stationController.getStation)
-	.patch(auth('getUsers'), validate(stationValidation.updateStation), stationController.updateStation)
-	.delete(auth('manageUsers'), validate(stationValidation.deleteStation), stationController.deleteStation);
+	.patch(auth('manageStation'), validate(stationValidation.updateStation), stationController.updateStation)
+	.delete(auth('manageStation'), validate(stationValidation.deleteStation), stationController.deleteStation);
 
 module.exports = router;

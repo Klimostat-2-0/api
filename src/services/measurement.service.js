@@ -36,9 +36,7 @@ const getMeasurementById = async (id) => {
 };
 
 module.exports = {
-	createStation,
-	queryStations,
-	getStationById,
-	updateStationById,
-	deleteStationById,
+	createMeasurement,
+	queryMeasurements,
+	getMeasurementById,
 };

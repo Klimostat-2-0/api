@@ -17,3 +17,10 @@
 - [x] GET /v1/users/:userId - get user
 - [x] PATCH /v1/users/:userId - update user
 - [x] DELETE /v1/users/:userId - delete user
+
+## Station
+- [ ] POST /v1/station - register station
+- [ ] GET /v1/station - get all stations
+- [ ] GET /v1/station/:stationId - get specific station
+- [ ] PATCH /v1/station/:stationId - update specific station
+- [ ] DELETE /v1/station/:stationId - remove specific station

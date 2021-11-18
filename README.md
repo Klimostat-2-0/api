@@ -24,3 +24,8 @@
 - [ ] GET /v1/station/:stationId - get specific station
 - [ ] PATCH /v1/station/:stationId - update specific station
 - [ ] DELETE /v1/station/:stationId - remove specific station
+
+## Measurement
+- [ ] POST /v1/measurement - create new measurement
+- [ ] GET /v1/measurement - get all measurements
+- [ ] GET /v1/measurement/:measurementId - get specific measurement

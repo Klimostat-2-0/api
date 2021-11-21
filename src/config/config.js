@@ -37,6 +37,7 @@ module.exports = {
   port: envVars.PORT,
   base: envVars.BASE,
   appname: envVars.APP_NAME,
+  co2_limit: envVars.CO2_LIMIT,
   mongoose: {
     url: envVars.MONGODB_URL + (envVars.NODE_ENV === 'test' ? '-test' : ''),
     options: {

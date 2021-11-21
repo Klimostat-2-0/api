@@ -17,6 +17,10 @@ const stationSchema = mongoose.Schema(
       required: true,
       trim: true,
     },
+    co2_limit: {
+      type: Number,
+      required: true,
+    },
   },
   {
     timestamps: true,

@@ -8,6 +8,7 @@ const router = express.Router();
 
 router
 	.route('/')
+	.head(function (req, res) {res.send({})})
 	.post(auth('newStation'), validate(stationValidation.createStation), stationController.createStation)
 	.get(auth(), validate(stationValidation.getStations), stationController.getStations);
 

@@ -12,6 +12,10 @@ router
 	.get(auth(), validate(stationValidation.getStations), stationController.getStations);
 
 router
+	.route('/limit/:stationId')
+	.get(validate(stationValidation.getStation), stationController.getStationLimit)
+
+router
 	.route('/:stationId')
 	.get(auth(), validate(stationValidation.getStation), stationController.getStation)
 	.patch(auth('manageStation'), validate(stationValidation.updateStation), stationController.updateStation)

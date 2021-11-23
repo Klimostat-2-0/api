@@ -26,6 +26,14 @@ const getStation = catchAsync(async (req, res) => {
 	res.send(station);
 });
 
+const getStationLimit = catchAsync(async (req, res) => {
+	const station = await stationService.getStationById(req.params.stationId);
+	if (!station) {
+		throw new ApiError(httpStatus.NOT_FOUND, 'Station not found');
+	}
+	res.send({id: station.id, co2_limit: station.co2_limit});
+});
+
 const updateStation = catchAsync(async (req, res) => {
 	const station = await stationService.updateStationById(req.params.stationId, req.body);
 	res.send(station);
@@ -42,4 +50,5 @@ module.exports = {
 	getStation,
 	updateStation,
 	deleteStation,
+	getStationLimit,
 };

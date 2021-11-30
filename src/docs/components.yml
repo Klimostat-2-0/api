@@ -1,5 +1,27 @@
 components:
   schemas:
+    Station:
+      type: object
+      properties:
+        name: 
+          type: string
+        location:
+          type: string
+        roomNr:
+          type: number
+        co2_limit:
+          type: number
+        id:
+          type: string
+
+    StationLimit:
+      type: object
+      properties:
+        co2_limit:
+          type: number
+        id:
+          type: string
+
     User:
       type: object
       properties:

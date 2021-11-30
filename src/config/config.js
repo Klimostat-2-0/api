@@ -63,5 +63,6 @@ module.exports = {
       },
     },
     from: envVars.EMAIL_FROM,
+    name: envVars.EMAIL_NAME,
   },
 };

@@ -8,7 +8,7 @@ const router = express.Router();
 
 router
 	.route('/')
-	.post(validate(measurementValidation.createMeasurement), measurementController.createMeasurement)
+	.post(auth('station'), validate(measurementValidation.createMeasurement), measurementController.createMeasurement)
 	.get(auth(), validate(measurementValidation.getMeasurements), measurementController.getMeasurements);
 
 router

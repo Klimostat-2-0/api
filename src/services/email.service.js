@@ -32,11 +32,11 @@ const sendEmail = async (to, subject, text) => {
 const sendResetPasswordEmail = async (to, token, name) => {
   const subject = 'Reset password';
   // replace this url with the link to the reset password page of your front-end app
-  const resetPasswordUrl = `http://link-to-app/reset-password?token=${token}`;
+  const resetPasswordUrl = `${base}/v1/auth/reset-password?token=${token}`;
   const text = `Hi ${name},
   To reset your password, click on this link: 
   ${resetPasswordUrl}
-  
+
   If you did not request a password reset, then ignore this email.
   Your Klimostat 2.0 Team`;
   await sendEmail(to, subject, text);

@@ -29,13 +29,16 @@ const sendEmail = async (to, subject, text) => {
  * @param {string} token
  * @returns {Promise}
  */
-const sendResetPasswordEmail = async (to, token) => {
+const sendResetPasswordEmail = async (to, token, name) => {
   const subject = 'Reset password';
   // replace this url with the link to the reset password page of your front-end app
   const resetPasswordUrl = `http://link-to-app/reset-password?token=${token}`;
-  const text = `Dear user,
-To reset your password, click on this link: ${resetPasswordUrl}
-If you did not request any password resets, then ignore this email.`;
+  const text = `Hi ${name},
+  To reset your password, click on this link: 
+  ${resetPasswordUrl}
+  
+  If you did not request a password reset, then ignore this email.
+  Your Klimostat 2.0 Team`;
   await sendEmail(to, subject, text);
 };
 
@@ -45,11 +48,11 @@ If you did not request any password resets, then ignore this email.`;
  * @param {string} token
  * @returns {Promise}
  */
-const sendVerificationEmail = async (to, token) => {
+const sendVerificationEmail = async (to, token, name) => {
   const subject = 'Email Verification';
   // replace this url with the link to the email verification page of your front-end app
   const verificationEmailUrl = `http://link-to-app/verify-email?token=${token}`;
-  const text = `Dear Klimostat 2.0 user!
+  const text = `Hi ${name},
 To verify your email address, click on this link: 
 ${verificationEmailUrl}
 

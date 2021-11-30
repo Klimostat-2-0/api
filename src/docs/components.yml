@@ -14,6 +14,18 @@ components:
         id:
           type: string
 
+    Measurement:
+      type: object
+      properties:
+        timestamp: 
+          type: string
+        co2:
+          type: number
+        temperature:
+          type: number
+        humidity:
+          type: number
+
     StationLimit:
       type: object
       properties:

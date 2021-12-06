@@ -10,7 +10,7 @@ const createMeasurement = catchAsync(async (req, res) => {
 });
 
 const getMeasurements = catchAsync(async (req, res) => {
-	const filter = pick(req.query, ['temperature','humidity', 'co2', 'timestamp', 'station']);
+	const filter = pick(req.query, ['temperature', 'humidity', 'co2', 'timestamp', 'station', 'fromTimestamp']);
 	const options = pick(req.query, ['sortBy', 'limit', 'page']);
 	const result = await measurementService.queryMeasurements(filter, options);
 	res.send(result);

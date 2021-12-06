@@ -26,7 +26,6 @@ const queryMeasurements = async (filter, options) => {
 		filter.timestamp = {$gt:new Date(filter.fromTimestamp)}
 	}
 	delete filter.fromTimestamp
-	console.log(filter)
 	const measurements = await Measurement.paginate(filter, options);
 	return measurements;
 };

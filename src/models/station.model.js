@@ -21,6 +21,10 @@ const stationSchema = mongoose.Schema(
       type: Number,
       required: true,
     },
+    co2_reset: {
+      type: Number,
+      required: true,
+    }
   },
   {
     timestamps: true,

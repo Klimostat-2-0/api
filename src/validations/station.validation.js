@@ -6,6 +6,8 @@ const createStation = {
     name: Joi.string().required(),
     location: Joi.string().required(),
     roomNr: Joi.number().integer().required(),
+    co2_reset: Joi.number().integer(),
+    co2_limit: Joi.number().integer(),
   }),
 };
 
@@ -14,6 +16,8 @@ const getStations = {
     name: Joi.string(),
     location: Joi.string(),
     roomNr: Joi.number().integer(),
+    co2_reset: Joi.number().integer(),
+    co2_limit: Joi.number().integer(),
     sortBy: Joi.string(),
     limit: Joi.number().integer(),
     page: Joi.number().integer(),
@@ -35,6 +39,8 @@ const updateStation = {
       name: Joi.string(),
       location: Joi.string(),
       roomNr: Joi.number().integer(),
+      co2_reset: Joi.number().integer(),
+      co2_limit: Joi.number().integer(),
     })
     .min(1),
 };

@@ -31,7 +31,7 @@ const getStationLimit = catchAsync(async (req, res) => {
 	if (!station) {
 		throw new ApiError(httpStatus.NOT_FOUND, 'Station not found');
 	}
-	res.send({id: station.id, co2_limit: station.co2_limit});
+	res.send({id: station.id, co2_limit: station.co2_limit, co2_reset: station.co2_reset});
 });
 
 const updateStation = catchAsync(async (req, res) => {

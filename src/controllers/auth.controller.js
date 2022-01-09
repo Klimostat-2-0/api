@@ -1,4 +1,5 @@
 const httpStatus = require('http-status');
+const ApiError = require('../utils/ApiError');
 const catchAsync = require('../utils/catchAsync');
 const { authService, userService, tokenService, emailService } = require('../services');
 
@@ -11,12 +12,16 @@ const register = catchAsync(async (req, res) => {
 const login = catchAsync(async (req, res) => {
   const { email, password } = req.body;
   const user = await authService.loginUserWithEmailAndPassword(email, password);
+  if (user.isEmailVerified == false) {
+    await sendVerificationEmail({user});
+    throw new ApiError(httpStatus.FORBIDDEN, 'Please verify your email!');
+  }
   const tokens = await tokenService.generateAuthTokens(user);
   res.send({ user, tokens });
 });
 
 const logout = catchAsync(async (req, res) => {
-  await authService.logout(req.body.refreshToken);
+  await authService.logout(req.body.refreshToken);1
   res.status(httpStatus.NO_CONTENT).send();
 });
 

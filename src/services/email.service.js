@@ -51,7 +51,7 @@ const sendResetPasswordEmail = async (to, token, name) => {
 const sendVerificationEmail = async (to, token, name) => {
   const subject = 'Email Verification';
   // replace this url with the link to the email verification page of your front-end app
-  const verificationEmailUrl = `${config.base}/v1/auth/verify-email?token=${token}`;
+  const verificationEmailUrl = `${config.base}/auth/verify-email?token=${token}`;
   const text = `Hi ${name},
 To verify your email address, click on this link: 
 ${verificationEmailUrl}

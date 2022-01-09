@@ -6,17 +6,26 @@ const { authService, userService, tokenService, emailService } = require('../ser
 const register = catchAsync(async (req, res) => {
   const user = await userService.createUser(req.body);
   const tokens = await tokenService.generateAuthTokens(user);
+
+  //Copied from sendVerificationEmail()
+  const verifyEmailToken = await tokenService.generateVerifyEmailToken(user);
+  await emailService.sendVerificationEmail(user.email, verifyEmailToken, user.name);
+
   res.status(httpStatus.CREATED).send({ user, tokens });
 });
 
 const login = catchAsync(async (req, res) => {
   const { email, password } = req.body;
   const user = await authService.loginUserWithEmailAndPassword(email, password);
+  const tokens = await tokenService.generateAuthTokens(user);
   if (user.isEmailVerified == false) {
-    await sendVerificationEmail({user});
+
+    //Copied from sendVerificationEmail()
+    const verifyEmailToken = await tokenService.generateVerifyEmailToken(user);
+    await emailService.sendVerificationEmail(user.email, verifyEmailToken, user.name);
+
     throw new ApiError(httpStatus.FORBIDDEN, 'Please verify your email!');
   }
-  const tokens = await tokenService.generateAuthTokens(user);
   res.send({ user, tokens });
 });
 

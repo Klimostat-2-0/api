@@ -24,6 +24,10 @@ const stationSchema = mongoose.Schema(
     co2_reset: {
       type: Number,
       required: true,
+    },
+    ip: {
+      type: String,
+      trim: true,
     }
   },
   {

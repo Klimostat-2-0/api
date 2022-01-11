@@ -23,3 +23,26 @@ router
   });
 
 module.exports = router;
+
+/**
+ * @swagger
+ * tags:
+ *   name: Export
+ *   description: to export
+ */
+/**
+ * /json/measurements
+ *   get:
+ *     summary: Export measurements db
+ *     description: Only logged in users can retrieve all data.
+ *     tags: [Export]
+ *     security:
+ *       - bearerAuth: []
+ * /json/stations
+ *   get:
+ *     summary: Export stations db
+ *     description: Only logged in users can retrieve all data.
+ *     tags: [Export]
+ *     security:
+ *       - bearerAuth: []
+ */

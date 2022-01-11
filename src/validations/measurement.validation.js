@@ -18,6 +18,7 @@ const getMeasurements = {
     co2: Joi.number(),
     timestamp: Joi.date(),
     fromTimestamp: Joi.date(),
+    toTimestamp: Joi.date(),
     station: Joi.string().custom(objectId),
     sortBy: Joi.string(),
     limit: Joi.number().integer(),

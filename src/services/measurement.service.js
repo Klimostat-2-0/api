@@ -33,7 +33,6 @@ const queryMeasurements = async (filter, options) => {
 	}
 	delete filter.fromTimestamp
 	delete filter.toTimestamp
-	console.log(filter)
 	const measurements = await Measurement.paginate(filter, options);
 	return measurements;
 };

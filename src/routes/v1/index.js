@@ -2,6 +2,7 @@ const express = require('express');
 const authRoute = require('./auth.route');
 const userRoute = require('./user.route');
 const docsRoute = require('./docs.route');
+const exportRoute = require('./export.route');
 const stationRoute = require('./station.route');
 const measurementRoute = require('./measurement.route');
 const config = require('../../config/config');
@@ -24,6 +25,10 @@ const defaultRoutes = [
   {
     path: '/measurement',
     route: measurementRoute,
+  },
+  {
+    path: '/export',
+    route: exportRoute,
   },
 ];
 

@@ -98,6 +98,16 @@ module.exports = router;
  *           type: string
  *         description: timestamp
  *       - in: query
+ *         name: fromTimestamp
+ *         schema:
+ *           type: string
+ *         description: timestamp from
+ *       - in: query
+ *         name: toTimestamp
+ *         schema:
+ *           type: string
+ *         description: timestamp to
+ *       - in: query
  *         name: station
  *         schema:
  *           type: string

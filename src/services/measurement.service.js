@@ -22,12 +22,14 @@ const createMeasurement = async (measurementBody) => {
  * @returns {Promise<QueryResult>}
  */
 const queryMeasurements = async (filter, options) => {
-	filter.timestamp = {}
-	if (filter.fromTimestamp) {
-		filter.timestamp.$gt = new Date(filter.fromTimestamp)
-	}
-	if (filter.toTimestamp) {
-		filter.timestamp.$lt = new Date(filter.toTimestamp)
+	if (filter.fromTimestamp || filter.toTimestamp) {
+		filter.timestamp = {}
+		if (filter.fromTimestamp) {
+			filter.timestamp.$gt = new Date(filter.fromTimestamp)
+		}
+		if (filter.toTimestamp) {
+			filter.timestamp.$lt = new Date(filter.toTimestamp)
+		}
 	}
 	delete filter.fromTimestamp
 	delete filter.toTimestamp

@@ -7,6 +7,7 @@ const { stationService } = require('../services');
 
 const createStation = catchAsync(async (req, res) => {
 	req.body.co2_limit = config.co2_limit;
+	req.body.co2_reset = config.co2_limit * 0.8;
 	const station = await stationService.createStation(req.body);
 	res.status(httpStatus.CREATED).send(station);
 });

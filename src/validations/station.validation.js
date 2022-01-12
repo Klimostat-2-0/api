@@ -5,9 +5,7 @@ const createStation = {
   body: Joi.object().keys({
     name: Joi.string().required(),
     location: Joi.string().required(),
-    roomNr: Joi.number().integer().required(),
-    co2_reset: Joi.number().integer(),
-    co2_limit: Joi.number().integer(),
+    roomNr: Joi.number().integer().required()
   }),
 };
 
